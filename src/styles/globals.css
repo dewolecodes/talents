@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: #000000; 
+  --color2: #ffffff; 
+  --color3: #D61400; 
+  --color4: #FF9385; 
+  --color5: #2B2B2B;
+  --color6: #FFD54A; 
+  --color7: #4AA3FF;
+  --color8: rgba(220, 38, 38, 0.08);
+  --color9: #FFB400;
+  --color10: #0b0b0b;
+}
+
+html, body, #__next {
+  height: 100%;
+  background: var(--color1);
+  color: var(--color2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+header > div.container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* small-screen tweak for header height */
+@media (max-width: 767px) {
+  header > div.container { height: 64px; }
+}
+
+/* Responsive left-to-center flex container for all main content */
+.responsive-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .responsive-container { justify-content: center; }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; 
+  width: 0;
+  height: 0;
+}
