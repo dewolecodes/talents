@@ -1,3 +1,4 @@
+// src/app/article/[id]/page.tsx
 import React from "react";
 import { articles, type Article } from "../../data/articles";
 import BlogCard from "../../../components/BlogCard";
@@ -48,7 +49,8 @@ function getRelatedArticles(current: Article, all: Article[], limit = 3) {
   return picks.slice(0, limit);
 }
 
-export default function ArticlePage({ params }: Props) {
+// NOTE: explicit param typing avoids mismatches with Next's internal types
+export default function ArticlePage({ params }: Props): JSX.Element {
   const { id } = params;
   const article = articles.find((a) => a.id === id);
 
@@ -57,7 +59,8 @@ export default function ArticlePage({ params }: Props) {
       <main className="min-h-screen px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-2xl font-bold">Article not found</h1>
-          <p className="mt-4 text-[var(--color2)]">We couldn't find that article.</p>
+          {/* escape the apostrophe to satisfy the linter */}
+          <p className="mt-4 text-[var(--color2)]">We couldn&apos;t find that article.</p>
         </div>
       </main>
     );
@@ -106,7 +109,7 @@ export default function ArticlePage({ params }: Props) {
 
         <section className="mt-16">
           <h2 className="text-3xl md:text-4xl font-bold text-left" style={{ color: "var(--color3)" }}>
-            Releated Post
+            Related Posts
           </h2>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center md:justify-items-start">
