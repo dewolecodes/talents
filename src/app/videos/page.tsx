@@ -40,7 +40,7 @@ function formatTime(s: number) {
   return `${mins}:${String(secs).padStart(2, "0")}`;
 }
 
-export default function Page(): JSX.Element {
+export default function Page() {
   return (
     <main className="min-h-screen pt-6 sm:pt-4 md:pt-6 pb-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -358,7 +358,7 @@ function VideoCard({ item }: { item: VideoItem }) {
     <div ref={containerRef} className="relative">
       <div className="relative rounded-md overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.22)]">
  
-        <div className="absolute top-3 left-3 flex items-center gap-3 z-50 pointer-events-none">
+  <div className="absolute top-3 left-3 flex items-center gap-3 z-40 pointer-events-none">
           <img src={item.avatar} alt={item.artist} className="w-10 h-10 rounded-full object-cover border-2 border-white/60" />
           <div className="pointer-events-auto">
             <div className="text-sm font-semibold" style={{ color: "var(--color2)" }}>{item.artist}</div>
@@ -366,13 +366,13 @@ function VideoCard({ item }: { item: VideoItem }) {
           </div>
         </div>
 
-        <div className="absolute top-3 right-3 flex items-center gap-2 z-50 pointer-events-auto">
+  <div className="absolute top-3 right-3 flex items-center gap-2 z-40 pointer-events-auto">
           <div className="relative">
             <button
               onClick={() => setWatchLater((s) => !s)}
               title="Watch Later"
               aria-label="Watch later"
-              className="p-1.5 rounded-full z-50"
+              className="p-1.5 rounded-full z-40"
               style={{ background: "rgba(0,0,0,0.28)", color: "var(--color2)" }}
             >
               {watchLater ? <FiCheck size={16} /> : <FiClock size={16} />}
@@ -384,7 +384,7 @@ function VideoCard({ item }: { item: VideoItem }) {
               onClick={handleShare}
               title="Share"
               aria-label="Share"
-              className="p-1.5 rounded-full z-50"
+              className="p-1.5 rounded-full z-40"
               style={{ background: "rgba(0,0,0,0.28)", color: "var(--color2)" }}
             >
               <FiShare2 size={16} />
@@ -438,9 +438,9 @@ function VideoCard({ item }: { item: VideoItem }) {
 
         {/* FLASH ICON: appears briefly on play/pause with fade animation but only while video is active */}
         {isActive && flashIcon && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-50">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-40">
             <div
-              aria-hidden
+              aria-hidden={true}
               style={{
                 width: 80,
                 height: 80,
@@ -529,7 +529,7 @@ function VideoCard({ item }: { item: VideoItem }) {
       </div>
 
       {showShareModal && (
-        <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
+        <div role="dialog" aria-modal="true" className="fixed inset-0 z-60 flex items-end md:items-center justify-center">
           <div className="absolute inset-0 bg-black/50" onClick={() => setShowShareModal(false)} aria-hidden="true" />
           <div className="relative w-full max-w-md mx-4 mb-6 md:mb-0 rounded-lg bg-white shadow-lg overflow-hidden">
             <div className="p-4 border-b">

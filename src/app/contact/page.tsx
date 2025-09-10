@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-export default function Page(): JSX.Element {
+export default function Page() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -75,7 +75,7 @@ export default function Page(): JSX.Element {
 
               <ul className="space-y-5">
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden={true}>
                     <path d="M21 15.46V19a2 2 0 01-2 2 19 19 0 01-8.63-2.53A19 19 0 014.53 7.63 19 19 0 012 1.63 2 2 0 014 0h3.54a2 2 0 012 1.72c.12 1.02.37 2.02.73 2.96a2 2 0 01-.45 2L8.8 8.8a16.01 16.01 0 006.4 6.4l1.12-1.12a2 2 0 012-.45c.94.36 1.94.61 2.96.73A2 2 0 0124 16.46z" />
                   </svg>
                   <div>
@@ -84,7 +84,7 @@ export default function Page(): JSX.Element {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden={true}>
                     <path d="M3 6.5A2.5 2.5 0 015.5 4h13A2.5 2.5 0 0121 6.5v11A2.5 2.5 0 0118.5 20h-13A2.5 2.5 0 013 17.5v-11zM4 6.75l8 5 8-5" />
                   </svg>
                   <div>
@@ -93,7 +93,7 @@ export default function Page(): JSX.Element {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <svg className="w-6 h-6 flex-shrink-0 text-[var(--color3)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden={true}>
                     <path d="M12 21s-6.5-5.2-6.5-10A6.5 6.5 0 0112 4.5 6.5 6.5 0 0118.5 11c0 4.8-6.5 10-6.5 10z" />
                   </svg>
                   <div>

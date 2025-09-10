@@ -3,8 +3,6 @@ import React from "react";
 import { articles, type Article } from "../../data/articles";
 import BlogCard from "../../../components/BlogCard";
 
-type Props = { params: { id: string } };
-
 const STOPWORDS = new Set([
   "the","a","an","and","or","in","on","at","to","for","of","is","are","was","were","it","that","this","with","as","by","from"
 ]);
@@ -49,17 +47,22 @@ function getRelatedArticles(current: Article, all: Article[], limit = 3) {
   return picks.slice(0, limit);
 }
 
-// NOTE: explicit param typing avoids mismatches with Next's internal types
-export default function ArticlePage({ params }: Props): JSX.Element {
-  const { id } = params;
-  const article = articles.find((a) => a.id === id);
+// Make the component accept any props to avoid the PageProps generic constraint.
+// We still safely resolve params (which might be a Promise-like) and extract id.
+export default async function ArticlePage(props: any) {
+  const params = props?.params;
+  const resolvedParams = params && typeof (params as any)?.then === "function"
+    ? await (params as Promise<{ id: string }>)
+    : (params as { id: string } | undefined);
+
+  const id = resolvedParams?.id;
+  const article = id ? articles.find((a) => a.id === id) : undefined;
 
   if (!article) {
     return (
       <main className="min-h-screen px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-2xl font-bold">Article not found</h1>
-          {/* escape the apostrophe to satisfy the linter */}
           <p className="mt-4 text-[var(--color2)]">We couldn&apos;t find that article.</p>
         </div>
       </main>

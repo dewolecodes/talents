@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Music, Globe2 } from "lucide-react";
+export default function AboutPage() {
 
-export default function AboutPage(): JSX.Element {
   return (
     <>
       <section
@@ -17,7 +17,7 @@ export default function AboutPage(): JSX.Element {
           </div>
 
           <div className="about-grid">
-            <div className="relative collage" aria-hidden>
+            <div className="relative collage" aria-hidden={true}>
               <div className="collage-inner">
                 <div className="large-wrapper">
                   <div className="group collage-large">
@@ -101,24 +101,24 @@ export default function AboutPage(): JSX.Element {
          <div className="pt-2 md:pt-0 relative left-column2">
               <h2 className="headline2">Delivering Music Worldwide</h2>
               <p className="mt-3 text-sm md:text-base desc2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac sem nec sapien
-                laoreet vulputate.
+                Talent's taste for delivering the utmost value, has inspired the company’s expansion into innovative services such as 
+                partnerships, content production, publishing and marketing.
               </p>
 
               <div className="mt-6 flex gap-6 items-center stats2" role="list">
-                <div className="stat-icon2" aria-hidden="true" title="Music" role="listitem">
+                <div className="stat-icon2" aria-hidden={true} title="Music" role="listitem">
                   <Music size={40} style={{ color: "var(--color3)" }} />
                   <span className="visually-hidden">Music</span>
                 </div>
 
-                <div className="stat-icon2" aria-hidden="true" title="Global" role="listitem">
+                <div className="stat-icon2" aria-hidden={true} title="Global" role="listitem">
                   <Globe2 size={40} style={{ color: "var(--color3)" }} />
                   <span className="visually-hidden">Global</span>
                 </div>
               </div>
             </div>
 
-            <div className="relative collage2" aria-hidden>
+            <div className="relative collage2" aria-hidden={true}>
               <div className="collage2-inner">
                 <div className="large-wrapper2">
                   <div className="group collage2-large">

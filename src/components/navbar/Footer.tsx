@@ -3,7 +3,7 @@
 import React from "react";
 import { FaInstagram, FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
 
-export default function Footer(): JSX.Element {
+export default function Footer(): React.JSX.Element {
   return (
     <>
       {/* Cookie choices - fixed so it remains visible even when footer is off-screen */}

@@ -32,8 +32,8 @@ export default function ArtistsPage() {
   return (
     <div className="container pt-0 pb-12">
       <header className="mb-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-color4">Our Artists</h1>
-        <p className="text-color2 max-w-2xl mx-auto">Meet the talented roster on our record label.</p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-[var(--color3)]">Our Artists</h1>
+        <p className="text-[var(--color2)] max-w-2xl mx-auto">Meet the talented roster on our record label.</p>
       </header>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
