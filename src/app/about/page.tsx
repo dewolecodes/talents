@@ -658,11 +658,29 @@ export default function AboutPage() {
             padding: 0 1.25rem;
           }
 
-          .collage2-large {
+
+           .about2-grid {
+            display: flex;
+            flex-direction: column;
+          }
+
+           .collage2 {
+            order: -1;
+            margin: 0 auto;
+            display: block;
+          }
+
+          .collage2-inner {
+            margin: 0 auto;
+            height: 360px; 
+            max-width: 360px;
+          }
+
+            .collage2-large {
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-            top: 40px;
+            top: 10px; 
             width: 260px;
             height: 240px;
             z-index: 20;
@@ -674,7 +692,7 @@ export default function AboutPage() {
             width: 100px;
             height: 100px;
             z-index: 30;
-            top: 40px;
+            top: 10px;
           }
 
           .collage2-bottom {
@@ -684,7 +702,11 @@ export default function AboutPage() {
             width: 100px;
             height: 100px;
             z-index: 25;
-            top: calc(40px + 240px);
+            top: calc(10px + 240px); 
+          }
+
+          .about2-section {
+            margin-top: 2rem; 
           }
 
           .headline2 {
@@ -750,6 +772,15 @@ export default function AboutPage() {
           .left-column2 {
             margin-left: 0;
             padding: 0 1.25rem;
+          }
+
+           .about2-grid {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .collage2 {
+            order: -1;
           }
 
           .collage2-large {

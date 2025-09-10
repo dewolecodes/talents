@@ -121,9 +121,9 @@ export default function ShopPage(): React.ReactElement {
               </div>
             </div>
 
-            <div className="hidden md:flex items-center justify-center">
-           
-              <div className="w-72 h-72 rounded-xl overflow-hidden shadow-xl relative">
+            <div className="flex items-center justify-center">
+
+              <div className="w-full md:w-72 h-56 md:h-72 rounded-xl overflow-hidden shadow-xl relative">
                 <img src="/images/cover1.jpg" alt="Featured cover" className="w-full h-full object-cover block" />
                 <div className="absolute inset-0 flex items-end justify-start p-4">
                   <div className="text-left text-white p-3 bg-black/30 backdrop-blur-sm rounded-md max-w-xs">
@@ -164,7 +164,7 @@ export default function ShopPage(): React.ReactElement {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search albums, merch, artists..."
-                className="rounded-full px-4 py-2 bg-white/6 placeholder:text-white/60 outline-none w-60" style={{ color: "var(--color5)" }}
+                className="rounded-full px-4 py-2 bg-white/6 placeholder:text-white/60 outline-none w-48 md:w-60" style={{ color: "var(--color5)" }}
               />
             </div>
 
