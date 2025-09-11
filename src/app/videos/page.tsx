@@ -79,7 +79,7 @@ const YOUTUBE_URL = "https://www.youtube.com";
 
 function resolveVideoUrl(src: string) {
   if (!src) return src;
-  if (/^https?:\/\//i.test(src)) return src; // already absolute
+  if (/^https?:\/\//i.test(src)) return src; 
   if (typeof window !== "undefined") return window.location.origin + src;
   return src;
 }
@@ -95,7 +95,7 @@ function formatTime(s: number) {
 
 export default function Page() {
   return (
-    <main className="min-h-screen pt-6 sm:pt-4 md:pt-6 pb-12">
+    <main className="min-h-screen pt-2 sm:pt-4 md:pt-6 pb-12 -mt-3 md:mt-0">
       <div className="max-w-6xl mx-auto px-6">
         <h1
           className="text-4xl sm:text-5xl font-extrabold text-center mt-0 sm:-mt-9 mb-6 sm:mb-16"

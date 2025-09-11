@@ -4,7 +4,7 @@ import BlogCard from "../../components/BlogCard";
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen pt-6 sm:pt-8 px-6 pb-8">
+    <main className="min-h-screen -mt-3 md:mt-0 pt-2 sm:pt-2 px-6 pb-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-8" style={{ color: "var(--color3)" }}>
           Latest from our Blog

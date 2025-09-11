@@ -88,7 +88,7 @@ export default function ShopPage(): React.ReactElement {
   }
 
   return (
-  <main className="min-h-screen pt-8 md:pt-2 pb-16" style={{ background: "var(--color1, #000)" }}>
+  <main className="min-h-screen -mt-8 md:mt-0 pt-8 md:pt-2 pb-16" style={{ background: "var(--color1, #000)" }}>
       <div className="max-w-7xl mx-auto px-6">
       
         <section className="relative rounded-lg overflow-hidden mb-10 shadow-lg bg-gradient-to-tr from-[#0b0b0b] to-[#121212]">
@@ -147,11 +147,11 @@ export default function ShopPage(): React.ReactElement {
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`inline-flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
                     active ? "bg-[var(--color3)] text-[var(--color2)]" : "bg-white/6 text-white"
                   }`}
                 >
-                  <Icon />
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span>{c.name}</span>
                 </button>
               );
