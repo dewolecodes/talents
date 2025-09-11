@@ -20,16 +20,69 @@ type VideoItem = {
   src: string;
 };
 
+/**
+ * Use Cloudinary-hosted videos (public links).
+ * Replace these URLs with yours if they change.
+ */
 const ITEMS: VideoItem[] = [
-  { id: "1", cover: "/images/cover1.jpg", avatar: "/images/cover1.jpg", artist: "Tarik", title: "Pain (Live performance)", src: "/videos/video1.mp4" },
-  { id: "2", cover: "/images/cover2.jpg", avatar: "/images/cover2.jpg", artist: "Brymo", title: "I.T.T (Live performance)", src: "/videos/video2.mp4" },
-  { id: "3", cover: "/images/cover3.jpg", avatar: "/images/cover3.jpg", artist: "Brymo", title: "Joro", src: "/videos/video2.mp4" },
-  { id: "4", cover: "/images/cover4.jpg", avatar: "/images/cover4.jpg", artist: "Major AJ", title: "Must Have Been", src: "/videos/video1.mp4" },
-  { id: "5", cover: "/images/cover5.jpg", avatar: "/images/cover5.jpg", artist: "Tariq", title: "Streetlights", src: "/videos/video1.mp4" },
-  { id: "6", cover: "/images/cover6.jpg", avatar: "/images/cover6.jpg", artist: "Neon Dave", title: "Believe", src: "/videos/video1.mp4" },
+  {
+    id: "1",
+    cover: "/images/cover1.jpg",
+    avatar: "/images/cover1.jpg",
+    artist: "Tarik",
+    title: "Pain (Live performance)",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597340/video1_skhx8z.mp4",
+  },
+  {
+    id: "2",
+    cover: "/images/cover2.jpg",
+    avatar: "/images/cover2.jpg",
+    artist: "Brymo",
+    title: "I.T.T (Live performance)",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597419/video2_fmexk7.mp4",
+  },
+  {
+    id: "3",
+    cover: "/images/cover3.jpg",
+    avatar: "/images/cover3.jpg",
+    artist: "Brymo",
+    title: "Joro",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597419/video2_fmexk7.mp4",
+  },
+  {
+    id: "4",
+    cover: "/images/cover4.jpg",
+    avatar: "/images/cover4.jpg",
+    artist: "Major AJ",
+    title: "Must Have Been",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597340/video1_skhx8z.mp4",
+  },
+  {
+    id: "5",
+    cover: "/images/cover5.jpg",
+    avatar: "/images/cover5.jpg",
+    artist: "Tariq",
+    title: "Streetlights",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597340/video1_skhx8z.mp4",
+  },
+  {
+    id: "6",
+    cover: "/images/cover6.jpg",
+    avatar: "/images/cover6.jpg",
+    artist: "Neon Dave",
+    title: "Believe",
+    src: "https://res.cloudinary.com/dqirwsjga/video/upload/v1757597340/video1_skhx8z.mp4",
+  },
 ];
 
 const YOUTUBE_URL = "https://www.youtube.com";
+
+function resolveVideoUrl(src: string) {
+  if (!src) return src;
+  if (/^https?:\/\//i.test(src)) return src; // already absolute
+  if (typeof window !== "undefined") return window.location.origin + src;
+  return src;
+}
 
 function formatTime(s: number) {
   if (!isFinite(s)) return "0:00";
@@ -219,7 +272,7 @@ function VideoCard({ item }: { item: VideoItem }) {
   }
 
   function handleShareTarget(target: string) {
-    const url = (typeof window !== "undefined" ? window.location.origin : "") + item.src;
+    const url = resolveVideoUrl(item.src);
     const title = `${item.artist} — ${item.title}`;
     const text = `${title} ${url}`;
 
@@ -257,7 +310,7 @@ function VideoCard({ item }: { item: VideoItem }) {
   }
 
   const handleShare = async () => {
-    const url = (typeof window !== "undefined" ? window.location.origin : "") + item.src;
+    const url = resolveVideoUrl(item.src);
     const title = `${item.artist} — ${item.title}`;
     const nav: any = typeof navigator !== "undefined" ? navigator : undefined;
     if (nav && typeof nav.share === "function") {
@@ -279,7 +332,7 @@ function VideoCard({ item }: { item: VideoItem }) {
         setIsPlaying(false);
       }
     } catch {}
-    window.open(item.src, "_blank");
+    window.open(resolveVideoUrl(item.src), "_blank");
   }
 
   function seekToClientX(clientX: number) {
@@ -427,13 +480,14 @@ function VideoCard({ item }: { item: VideoItem }) {
 
         <video
           ref={videoRef}
-          src={item.src}
+          src={resolveVideoUrl(item.src)}
           className={`w-full h-[320px] object-cover ${isActive ? "block" : "hidden"}`}
           playsInline
           onClick={() => {
             // clicking the video toggles play/pause and flashes icon
             togglePlay();
           }}
+          controls={false}
         />
 
         {/* FLASH ICON: appears briefly on play/pause with fade animation but only while video is active */}
