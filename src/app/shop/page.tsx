@@ -139,7 +139,7 @@ export default function ShopPage(): React.ReactElement {
 
         {/* Category filters + search + cart */}
         <div className="flex items-center justify-between mb-6 gap-4">
-          <div className="flex items-center gap-3 overflow-auto pb-1 hide-scrollbar">
+          <div className="flex items-center gap-2 sm:gap-3 overflow-auto pb-1 hide-scrollbar">
             {CATEGORIES.map((c) => {
               const Icon = c.icon as any;
               const active = category === (c.id === "all" ? "all" : c.id);
@@ -147,7 +147,7 @@ export default function ShopPage(): React.ReactElement {
                 <button
                   key={c.id}
                   onClick={() => setCategory(c.id)}
-                  className={`inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                  className={`inline-flex items-center gap-1 sm:gap-2 ${c.id !== 'all' ? 'px-1 sm:px-3 py-1 sm:py-2' : 'px-2 sm:px-3 py-1 sm:py-2'} rounded-full text-xs sm:text-sm font-medium transition-all ${
                     active ? "bg-[var(--color3)] text-[var(--color2)]" : "bg-white/6 text-white"
                   }`}
                 >
