@@ -668,11 +668,12 @@ export default function AboutPage() {
             order: -1;
             margin: 0 auto;
             display: block;
+           margin-bottom: 2rem; /* add space below collage on mobile so text doesn't touch images */
           }
 
           .collage2-inner {
             margin: 0 auto;
-            height: 360px; 
+            height: 260px; /* reduced to bring text closer */
             max-width: 360px;
           }
 
@@ -680,9 +681,9 @@ export default function AboutPage() {
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-            top: 10px; 
+            top: 4px; /* smaller top offset */
             width: 260px;
-            height: 240px;
+            height: 220px; /* slightly reduced height */
             z-index: 20;
           }
           .collage2-top {
@@ -692,7 +693,7 @@ export default function AboutPage() {
             width: 100px;
             height: 100px;
             z-index: 30;
-            top: 10px;
+            top: 4px;
           }
 
           .collage2-bottom {
@@ -702,7 +703,7 @@ export default function AboutPage() {
             width: 100px;
             height: 100px;
             z-index: 25;
-            top: calc(10px + 240px); 
+            top: calc(4px + 220px); /* match reduced top/height */
           }
 
           .about2-section {
@@ -781,6 +782,7 @@ export default function AboutPage() {
 
           .collage2 {
             order: -1;
+           margin-bottom: 1.5rem; 
           }
 
           .collage2-large {
@@ -789,18 +791,18 @@ export default function AboutPage() {
             left: 50%;
             transform: translateX(-50%);
             position: relative;
-            top: 30px;
+            top: 12px; 
           }
           .collage2-top {
             width: 80px;
             height: 80px;
-            top: 30px;
+            top: 12px;
             transform: translate(-50%, -75%);
           }
           .collage2-bottom {
             width: 80px;
             height: 80px;
-            top: calc(30px + 160px);
+            top: calc(12px + 160px);
             transform: translate(-50%, -25%);
           }
 
