@@ -11,9 +11,9 @@ const releases: Release[] = [
   { id: 4, artist: "Beyonce", track: "Sun", fileName: "/images/beyonceSun.jpg", type: "SINGLE" },
   { id: 5, artist: "Bob Kay", track: "Invisible Wings", fileName: "/images/teniInvisibleWings.jpg", type: "SINGLE" },
   { id: 6, artist: "Beyonce", track: "Mama Tears", fileName: "/images/veraMamaTears.jpg", type: "SINGLE" },
-  { id: 7, artist: "Neon Dave", track: "Black Man", fileName: "/images/flyestKutiBlackMan.jpg", type: "EP" },
-  { id: 8, artist: "Bob Kay", track: "Clarity Of Mind", fileName: "/images/veeClarity.jpg", type: "EP" },
-  { id: 9, artist: "Tarik", track: "Chicago", fileName: "/images/r2DChicago.jpg", type: "ALBUM" },
+  { id: 7, artist: "Bob Kay", track: "Clarity Of Mind", fileName: "/images/veeClarity.jpg", type: "ALBUM" },
+  { id: 8, artist: "Neon Dave", track: "Black Arrest", fileName: "/images/blackarrest.jpg", type: "EP" },
+  { id: 9, artist: "Tarik", track: "Chicago", fileName: "/images/r2DChicago.jpg", type: "EP" },
   
 ];
 
