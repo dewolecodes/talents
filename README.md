@@ -98,7 +98,7 @@ Please keep PRs clean and focused.
 
 ---
 
-# LICENSE.md — MIT License (simple and friendly)
+# LICENSE.md — MIT License 
 
 ```
 MIT License
