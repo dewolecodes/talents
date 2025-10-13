@@ -4,7 +4,7 @@
 Talents
 
 ## What is Talents?
-**Talents** is a Next.js + TailwindCSS web project that showcases music artists, their record label, new releases, blogs, and an e-commerce section for selling tickets or tracks. It’s a modern full-stack template for music-based or entertainment websites.  
+**Talents** is a Next.js + TypeScript TailwindCSS web project that showcases music artists, their record label, new releases, blogs, and an e-commerce section for selling tickets or tracks. It’s a modern full-stack template for music-based or entertainment websites.  
 Anyone can use or modify it for their own music, record label, or entertainment project.
 
 ## Key Features
@@ -47,7 +47,7 @@ npm run build
 npm start
 ```
 
-## Project Structure (suggested)
+## Project Structure
 ```
 talents/
 ├─ public/
