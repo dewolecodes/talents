@@ -17,6 +17,7 @@ Anyone can use or modify it for their own music, record label, or entertainment 
 
 ## Tech Stack
 - Next.js 15 (React 19)
+- Typescript 5.9
 - TailwindCSS 3
 - Framer Motion (animations)
 - React Icons / Lucide React (icons)
@@ -85,7 +86,7 @@ vercel
 
 ## Contribution
 1. Fork this repository.
-2. Create a feature branch (`git checkout -b feature-name`).
+2. Create a feature branch.
 3. Commit and push your changes.
 4. Open a pull request.
 
@@ -131,7 +132,7 @@ SOFTWARE.
 - Keep this license notice in your version.
 - The author is not responsible for any damages or issues.
 
-## Example Copyright
+## Copyright
 ```
 Copyright (c) 2025 dewolecodes
 ```
